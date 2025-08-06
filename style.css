@@ -1,0 +1,252 @@
+/* 기본 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #FAFAFA;
+  color: #222222;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 네비게이션 */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #FF6F61;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: #222222;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover {
+  color: #FF6F61;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #222222;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* 섹션 스타일 */
+main {
+  margin-top: 60px; /* nav 높이 만큼 띄우기 */
+  position: relative;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  background-color: #FAFAFA;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  overflow-y: auto;
+}
+
+section.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* 타이핑 텍스트 */
+#typing {
+  font-size: 2.5rem;
+  color: #FF6F61;
+  margin-bottom: 20px;
+  min-height: 3rem;
+}
+
+/* 인터뷰 타임라인 */
+.timeline-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.character-area {
+  flex: 0 0 180px;
+  text-align: center;
+}
+
+.character-area img {
+  max-width: 160px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.timeline-qa {
+  flex: 1 1 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 질문 리스트 */
+.timeline-questions {
+  list-style: none;
+  border-left: 3px solid #FF6F61;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+.timeline-questions li {
+  position: relative;
+  padding: 12px 15px 12px 20px;
+  margin-bottom: 18px;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(255,111,97,0.3);
+  user-select: none;
+  min-height: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.timeline-questions li:hover,
+.timeline-questions li.active {
+  background-color: #FF6F61;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255,111,97,0.6);
+}
+
+.timeline-questions li::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: #FF6F61;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255,111,97,0.7);
+}
+
+.timeline-questions .question-text {
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+/* 답변 박스 */
+.answer-box {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(255,111,97,0.2);
+  min-height: 150px;
+  color: #222;
+  font-size: 1.2rem;
+  user-select: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* 이미지 확대 효과 */
+.zoom-image {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  border-radius: 8px;
+  transition: transform 0.6s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.zoom-image.visible {
+  transform: scale(1.05);
+}
+
+/* 반응형 */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: #ffffff;
+    height: calc(100% - 60px);
+    width: 200px;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  section {
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REITAKUNOOHIMESAMA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">REITAKUNOOHIMESAMA</div>
+      <div class="hamburger" id="hamburger" aria-expanded="false" aria-label="メニュー開閉" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="active">ABOUT</a></li>
+        <li><a href="#interview">INTERVIEW</a></li>
+        <li><a href="#philosophy">PHILOSOPHY</a></li>
+        <li><a href="#culture">CULTURE</a></li>
+        <li><a href="#future">FUTURE</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="about" class="active">
+      <h1 id="typing"></h1>
+      <p>代表の紹介などの内容がここに入ります。</p>
+    </section>
+
+    <section id="interview">
+      <h1>INTERVIEW</h1>
+      <div class="timeline-container">
+        <div class="character-area">
+          <img src="https://i.imgur.com/ZXBtVw7.png" alt="キャラクター" />
+        </div>
+        <div class="timeline-qa">
+          <ul class="timeline-questions" id="question-list">
+            <li data-answer="ビジネスは人との信頼が大切だと思っています。">
+              <span class="question-text">ビジネスにおける信頼とは？</span>
+            </li>
+            <li data-answer="挑戦を恐れずに、新しいことに常にチャレンジしています。">
+              <span class="question-text">挑戦についてどう考えていますか？</span>
+            </li>
+            <li data-answer="チームワークが成功の鍵です。">
+              <span class="question-text">チームワークの重要性は？</span>
+            </li>
+          </ul>
+          <div class="answer-box" id="answer-box">
+            質問をクリックすると回答が表示されます。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="philosophy">
+      <h1>PHILOSOPHY</h1>
+      <p>哲学に関する内容がここに入ります。</p>
+      <img src="https://via.placeholder.com/600x300" alt="Philosophy Image" class="zoom-image" />
+    </section>
+
+    <section id="culture">
+      <h1>CULTURE</h1>
+      <p>企業文化に関する内容がここに入ります。</p>
+    </section>
+
+    <section id="future">
+      <h1>FUTURE</h1>
+      <p>未来の展望に関する内容がここに入ります。</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
